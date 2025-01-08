@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd">
+
+    <cache name="exampleCache"
+           maxEntriesLocalHeap="100"
+           eternal="false"
+           timeToIdleSeconds="120"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+</config>
