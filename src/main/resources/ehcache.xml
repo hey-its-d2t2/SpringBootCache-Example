@@ -1,7 +1,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd">
 
-    <cache name="exampleCache"
+    <cache name="userCacheData"
            maxEntriesLocalHeap="100"
            eternal="false"
            timeToIdleSeconds="120"
@@ -9,3 +9,24 @@
            memoryStoreEvictionPolicy="LRU">
     </cache>
 </config>
+
+<!--
+        - name: Defines the name of the cache. In this case, "userCacheData"
+                is the identifier for this cache, which aligns with the @Cacheable annotation in your service.
+
+        - maxEntriesLocalHeap: Sets the maximum number of entries that can be stored in the heap (memory).
+                                Here, it’s set to 100, meaning the cache can store up to 100 items in memory.
+
+        - eternal: If set to false, it means that cached items will eventually expire.
+                   Setting it to true would keep cache entries forever unless manually evicted.
+
+        - timeToIdleSeconds: Defines the time (in seconds) that an entry can remain in the cache without being accessed.
+                            After 120 seconds of inactivity, the cache entry will be eligible for eviction.
+
+        - timeToLiveSeconds: Specifies the maximum time (in seconds) an entry can remain in the cache,
+                                regardless of access. After 600 seconds, the entry will be removed from the cache.
+
+        - memoryStoreEvictionPolicy: Determines the policy for evicting entries from the cache when it reaches its maximum capacity.
+                                    LRU (Least Recently Used) means that when the cache is full, the least recently accessed entry will be the first to be removed.
+
+ -->
